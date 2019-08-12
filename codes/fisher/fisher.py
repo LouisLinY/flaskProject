@@ -37,7 +37,27 @@ def hello():
 #基于类的视图（即插视图）
 # app.add_url_rule('/hello', view_func=hello)
 
-if __name__ == '__main__':          #如果该文件作为入口函数执行，如果
+@app.route('/book/search/<q>/<page>')
+def search(q, page):
+	
+	"""
+	q:普通关键字isbn
+    page:
+    
+	:return:
+	"""
+	#isbn:isbn13 13个0到9的数字组合
+	#isbn10 10个0到9的数字组合，含有一些‘-’
+    isbn_or_key = 'key'
+    if len(q) == 13 and q.isdigit():
+	    isbn_or_key = 'isbn'
+    short_q = q.replace('-', '')
+	if '-' in q and len(short_q) == 10 and short_q.isdigit():
+        isbn_or_key = 'isbn'
+
+
+if __name__ == '__main__':
+    #如果该文件作为入口函数执行，如果
 	#生产环境nginx+uwsgi，有uwsgi加载flask模块执行的，被uwsgi加载的模块文件
 	#如果没有if判断，uwsgi一旦加载这个文件之后，app.run会被
 	#if可以保证uwsgi加载时不会启动flask自带的服务器
