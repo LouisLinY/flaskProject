@@ -21,19 +21,19 @@
 
    pipenv install
 
-   ![](D:\github\flask_project\images\pipenv_install.png)
+   ![](D:\github\flaskProject\images\pipenv_install.png)
 
    3、进入pipenv创建的虚拟环境
 
    pipenv shell
 
-   ![](D:\github\flask_project\images\pipenv_shell.png)
+   ![](D:\github\flaskProject\images\pipenv_shell.png)
 
    4、在虚拟环境中安装flask
 
-   pipenv install flask
+   pipenv install flasks
 
-   ![](D:\github\flask_project\images\pipenv_install_flask.png)
+   ![](D:\github\flaskProject\images\pipenv_install_flask.png)
 
    5、退出虚拟环境
 
